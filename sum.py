@@ -1,6 +1,9 @@
 """ TASK: Take a list of two numbers, and return the sum of
 those two numbers and all the numbers between them.
-The lowest number will not always come first"""
+The lowest number will not always come first.
+
+Link to Free Code Camp challenge: 
+https://www.freecodecamp.com/challenges/sum-all-numbers-in-a-range"""
 
 def sum_all(list):
     list = sorted(list)
