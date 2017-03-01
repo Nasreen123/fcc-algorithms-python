@@ -16,14 +16,13 @@ def translate_pig_latin(english_word):
 
     if english_word[0] in vowels:
         translated_word = english_word + 'way'
-        
+
     else:
-        positions = []
-        for letter in vowels:
-            place = english_word.find(letter)
-            positions.append(place)
-        positions = [i if i != -1 else 100 for i in positions]
-        first_vowel = min(positions)
+        #find the positions of all the vowels in the word:
+        positions_of_vowels = [english_word.find(letter) for letter in vowels if english_word.find(letter) != -1]
+        #use positions of all the vowels to find the first vowel
+        first_vowel = min(positions_of_vowels)
+        #slice the word at the first vowel
         translated_word = english_word[first_vowel:] + english_word[0:first_vowel] + 'ay'
 
     return translated_word
