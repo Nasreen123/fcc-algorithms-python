@@ -6,6 +6,17 @@ Link to Free Code Camp challenge:
 https://www.freecodecamp.com/challenges/diff-two-arrays"""
 
 def diffArray(arr1,arr2):
+    """
+    >>> diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])
+    [4]
+    >>> diffArray(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub'])
+    ['pink wool']
+    >>> diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4])
+    ['piglet', 4]
+    >>> diffArray([1, 'calf', 3, 'piglet'], [7, 'filly'])
+    [1, 'calf', 3, 'piglet', 7, 'filly']
+
+    """
 
     new1 = [item for item in arr1 if item not in arr2]
     new2 = [item for item in arr2 if item not in arr1]
@@ -15,7 +26,6 @@ def diffArray(arr1,arr2):
     return newArr
 
 
-print diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])
-print diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])
-print diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4])
-print diffArray([1, "calf", 3, "piglet"], [7, "filly"])
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
