@@ -1,4 +1,4 @@
-import doctest
+import doctest, math
 
 def palindrome(string):
     """
@@ -13,16 +13,14 @@ def palindrome(string):
 
     string = string.replace(" ", "")
 
-    length = len(string)
+    if len(string) <= 1:
+        return True
 
-    if not length % 2:
-        length = length - 1
+    if string[0] == string[-1]:
+        return palindrome(string[1:-1])
 
-    for x in range(int(length/2)):
-        if string[x] != string[(length-x-1)]:
-            return False
-
-    return True
+    else:
+        return False
 
 
 doctest.testmod()
