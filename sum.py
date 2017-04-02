@@ -2,7 +2,7 @@
 those two numbers and all the numbers between them.
 The lowest number will not always come first.
 
-Link to Free Code Camp challenge: 
+Link to Free Code Camp challenge:
 https://www.freecodecamp.com/challenges/sum-all-numbers-in-a-range"""
 
 def sum_all(list):
@@ -17,7 +17,23 @@ def sum_all(list):
     return sum
 
 
-print sum_all([4,1])
-print sum_all([1,4])
-print sum_all([5,10])
-print sum_all([10,5])
+for item in [[4,1], [1,4], [5,10], [10,5]]:
+    print(sum_all(item))
+
+
+
+def recursive_sum(list, total=0):
+    list = sorted(list)
+    print('so far', list, total)
+    total = total + list[0]
+
+    if list[0] == list[1]:
+        return total
+
+    else:
+        list[0] = list[0] + 1
+        return recursive_sum(list, total)
+
+
+for item in [[4,1], [1,4], [5,10], [10,5]]:
+    print(recursive_sum(item))
