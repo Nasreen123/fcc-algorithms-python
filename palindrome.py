@@ -8,7 +8,6 @@ def palindrome(string):
     True
     >>> palindrome("not a palindrome")
     False
-
     """
 
     string = string.replace(" ", "")
